@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1= "Edit Employee"
+    div.newemployee
+        form( method="post")
+            input(name="_id", type="hidden", value=employee._id.toHexString()) 
+            div
+                div
+                    span.label Name :
+                    input(type="text", name="name", id="editEmployeeName", value=employee.name)
+                div
+                    span.label X :
+                    input(type="text", name="x", id="editEmployeeX", value=[x])
+                div
+                    span.label Y :
+                    input(type="text", name="y", id="editEmployeeY", value=[y])
+                div#editEmployeeSubmit
+                    input(type="submit", value="Update")
+        a(href="/")!= "Back to Employee List"

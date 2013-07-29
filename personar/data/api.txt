@@ -1,0 +1,28 @@
+Personar API:
+
+1. GET employee 
+Return all employees
+2. GET employee/:id 
+Return an employee
+3. POST employee
+upsert an employee
+4. DELETE employee/:id
+delete an employee
+
+Employee:
+{
+	id: "123",
+	name: "Yuval",
+	x: "42512",
+	y: "52559"
+}
+
+
+curl -X PUT -d @pavel_insert.json http://localhost:5000/employee --header "Content-Type:application/json"
+curl -X PUT -d @yuval_insert.json http://localhost:5000/employee --header "Content-Type:application/json"
+curl -X PUT -d @zharko_insert.json http://localhost:5000/employee --header "Content-Type:application/json"
+
+curl -X POST -d @yuval_update.json http://localhost:5000/employee --header "Content-Type:application/json"
+
+
+{_id: employee_collection.db.bson_serializer.ObjectID.createFromHexString("51efe05b39fa126938000004")}
